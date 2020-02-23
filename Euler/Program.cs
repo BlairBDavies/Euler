@@ -6,7 +6,7 @@ namespace Euler
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Problem3.FindLargestPrimeFactor(33);
         }
     }
 }
