@@ -6,7 +6,7 @@ namespace Euler
     {
         static void Main(string[] args)
         {
-            Problem3.FindLargestPrimeFactor(33);
+            var s = new Problem4().FindLargestPalindrome(1);
         }
     }
 }
