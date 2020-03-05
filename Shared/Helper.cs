@@ -7,6 +7,8 @@ namespace Shared
     {
         public static bool IsPrime(long num)
         {
+            if (num < 4) return true;
+            
             for (var i = 2; i <= (num / 2); i++)
             {
                 if (num % i == 0)
@@ -18,7 +20,7 @@ namespace Shared
 
         public static long GetNextPrime(long num) {
             var nextPrime = num;
-            var isPrime = false;;
+            var isPrime = false;
             while (!isPrime){
                 nextPrime++;
                 isPrime = IsPrime(nextPrime);
