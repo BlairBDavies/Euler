@@ -1,12 +1,12 @@
 ﻿using System;
-
+using Shared;
 namespace Euler
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var s = new Problem4().FindLargestPalindrome(1);
+            var s = Problem5.FindSmallestNumberOfMultiplesUpTo(10);
         }
     }
 }

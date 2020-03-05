@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Shared
 {
@@ -12,6 +13,35 @@ namespace Shared
                     return false;
             }
             return true;
+        }
+
+
+        public static long GetNextPrime(long num) {
+            var nextPrime = num;
+            var isPrime = false;;
+            while (!isPrime){
+                nextPrime++;
+                isPrime = IsPrime(nextPrime);
+            }
+            return nextPrime;
+        }
+
+
+        public static long[] FindPrimeMultiples(long num) {
+            List<long> result = new List<long> ();
+            var isPrime = IsPrime(num);
+            while(!isPrime){
+                for(long prime = 2; prime<=num/2; prime = GetNextPrime(prime)){
+                    if (num % prime == 0) {
+                        num = num / prime;
+                        result.Add(prime);
+                        break;
+                    }
+                }
+                isPrime = IsPrime(num);
+            }
+            result.Add(num);
+            return result.ToArray();
         }
     }
 }
