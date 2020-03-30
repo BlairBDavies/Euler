@@ -19,10 +19,12 @@ namespace Shared
 
 
         public static long GetNextPrime(long num) {
-            var nextPrime = num;
-            var isPrime = false;
+            if (num == 1) return 2;
+            if (num == 2) return 3;            
+            var nextPrime = num+2;
+            var isPrime = IsPrime(nextPrime);
             while (!isPrime){
-                nextPrime++;
+                nextPrime+=2;
                 isPrime = IsPrime(nextPrime);
             }
             return nextPrime;
@@ -44,6 +46,13 @@ namespace Shared
             }
             result.Add(num);
             return result.ToArray();
+        }
+
+        public static int CalculateHypoteneuse(int a, int b) {
+            var answer = Math.Sqrt(a * a + b * b);
+            if (Math.Truncate(answer) != answer)
+                return -1;
+            return (int)answer;
         }
     }
 }
