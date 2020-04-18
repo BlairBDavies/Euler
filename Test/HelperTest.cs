@@ -65,4 +65,14 @@ public class HelperTest
             Assert.IsTrue(result.Any(x => x == b));
         }
     }
+
+    [TestCase(2, new int[] { 1, 2})]
+    [TestCase(4, new int[] { 1, 2, 2, 4})]
+    [TestCase(12, new int[] { 1, 2, 3, 4, 6, 12})]
+    [TestCase(60, new int[] { 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60})]
+    [Test]
+    public void FindFactorsTest(int input, int [] expected){
+        var result = Helper.FindFactorsCount(input);
+        Assert.AreEqual(expected.Length, result);
+    }
 }

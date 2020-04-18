@@ -30,6 +30,17 @@ namespace Shared
             return nextPrime;
         }
 
+        public static int FindFactorsCount(long num) {
+            var sqrt = (int)Math.Sqrt(num);            
+            var result = 0;
+            for (int i = 1; i <= sqrt; i++)
+            {
+                if (num % i == 0) {
+                    result+=2;
+                }
+            }
+            return result;
+        }
 
         public static long[] FindPrimeMultiples(long num) {
             List<long> result = new List<long> ();
